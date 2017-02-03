@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+    div {
+      display: inline-block;
+      margin: auto;
+    }
+    img {
+      display: block;
+      margin: 5px 0px;
+      width: 400px;
+      height: auto;
+
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        for(var i=0; i <= 4; i++) {
+          $('div').append("<img src=\'images/ninja"+i+".png\' data-alt-src=\'images/cat"+i+".png\'/>");
+        }
+        $('img').click(function() {
+          var temp = $(this).attr('data-alt-src');
+          $(this).fadeOut(500,function() {
+            $(this).attr('data-alt-src',$(this).attr('src'));
+            $(this).attr('src',temp);
+            $(this).fadeIn(500);
+          });
+        });
+      });
+    </script>
+    <title></title>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
