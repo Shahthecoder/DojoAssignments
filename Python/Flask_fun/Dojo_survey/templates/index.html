@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Dojo survey</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body>
+		<div class="form-box">
+			<form action="/results" method="post" class="container">-
+				<div class="row">
+					<label for="name" class="four columns">Your Name:</label>
+					<input type="text" name="name" id="name" class="four columns">
+				</div>
+				<div class="row">
+					<label for="location" class="four columns">Dojo Location</label>
+					<select class="four columns" name="location" id="location">
+						<option value="San Jose">San Jose</option>
+						<option value="Seattle">Seattle</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Los Angeles">Los Angeles</option>
+					</select>
+				</div>
+				<div class="row">
+					<label for="lang" class="four columns">Favorite Language</label>
+					<select class="four columns" name="lang" id="lang">
+						<option value="Python">Python</option>
+						<option value="Javascript">JavaScript</option>
+						<option value="Ruby">Ruby</option>
+					</select>
+				</div>
+				<div class="row">
+					<label for="comment" class="four columns">Comment (optional)</label>
+				</div>
+				<div class="row">
+					<textarea name="comment" id="comment" class="ten columns"></textarea>
+				</div>
+				<div class="row">
+					<input type="submit" name="submit" value="Button" class="three columns offset-by-eight button">
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
