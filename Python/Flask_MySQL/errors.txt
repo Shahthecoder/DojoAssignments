@@ -1,0 +1,12 @@
+
+WRONG USERNAME:
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'moo'@'localhost' (using password: YES)")
+
+WRONG PASSWORD:
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+WRONG PORT:
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)")
+
+WRONG DATABASE NAME:
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1049, "Unknown database 'mydb2'")
