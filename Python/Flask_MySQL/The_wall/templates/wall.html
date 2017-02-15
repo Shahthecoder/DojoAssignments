@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Wall</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/wall.css') }}">
+    <style>
+    .message{
+      padding-left: 10px;
+      background-color: #ffaaaa;
+    }
+    .comment{
+      padding-left: 20px;
+      background-color: #ffffaa;
+    }
+    </style>
+  </head>
+  <body>
+  <h1>Welcome {{ user['first_name'] + '' + user['last_name']}}</h1>
+  <a href='/logoff'>Log off</a>
+
+  <h2>Post a message</h2>
+  <textarea name='message'></textarea> <input type='submit' value='Post a message'/>
+
+  <div>
+    {% for message in message: %}
+      <div class='message'>
+        <h3>{{ message['first_name'] + '' + message['last_name']}} - {{ message['created_at']}}</h3>
+        {{ message['text']}}
+        <div>
+          {% for comment in message['comments']: %}
+            <div class='comment'>
+              <b>{{ comment['first_name'] + '' + comment['last_name']}} - {{ comment['created_at']}}</b><br />
+              {{ comment['text']}}
+            </div>
+          {% endfor %}
+
+          <h3>Post a comment</h3>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  </body>
+</html>
